@@ -3,18 +3,24 @@
 from aiml import *
 
 
-if __name__ == '__main__':
-	import os, logging, readline, sys
-	chat = Chat()
-	try:
-                cont = True
-                while cont:
-                        strLine=raw_input('Human: ')
-                        strLine=strLine.strip()
-                        if not strLine == '': 
-                                response = chat.multisentenceRespond(strLine)
-				print ('Robot: '+response)
+class pyAiml():
 
-        except KeyboardInterrupt:
-		sys.exit(0);
 
+	def sraixCache(self, filename, chat)
+		import os, logging, readline, sys
+		try:
+			fd = open(filename, 'r')
+	                cont = True
+	                while cont:
+	                        strLine=fd.readline()
+				print 'Human: '+strLine
+	                        strLine=strLine.strip()
+	                        if not strLine == '': 
+	                                response = chat.multisentenceRespond(strLine)
+					print ('Robot: '+response)
+	
+	        except:
+			return 0;
+
+
+	
