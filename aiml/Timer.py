@@ -18,3 +18,28 @@
 #
 #
 
+import time
+
+class Timer:
+	def __init__(self):
+		self.startTimeMillis = self.__currentTimeMillis()
+
+	def _currentTimeMillis():
+		return int(round(time.time() * 1000))
+
+	def start(self):
+		self.startTimeMillis = self._currentTimeMillis()
+
+	def elapsedTimeMillis(self):
+		return self._currentTimeMillis() - self.startTimeMillis+1
+
+	def elapsedRestartMs(self):
+		ret = self._currentTimeMillis() - self.startTimeMillis+1
+		this.start()
+		return ret
+
+	def elapsedTimeSecs(self):
+		return self.elapsedTimeMillis() / 1000
+
+	def elapsedTimeMins(self):
+		return self.elapsedTimeMillis() / 60

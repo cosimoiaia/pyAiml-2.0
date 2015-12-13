@@ -18,3 +18,9 @@
 #
 #
 
+class StarBindings:
+	
+	def __init__(self):
+		self.inputStars = []
+		self.thatStars = []
+		topicStars = []

@@ -18,3 +18,10 @@
 #
 #
 
+class Clause:
+
+	def __init__(self, s='', p='', o='', affirm=True):
+		self.subj = s
+		self.pred = p
+		self.obj = o
+		self.affirm=affirm

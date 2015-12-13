@@ -18,3 +18,15 @@
 #
 #
 
+class Nodemapper:
+	
+	def __init__(self):
+		self.category = None;
+		self.height = MagicNumbers.max_graph_height;
+		self.starBindings = None;
+		self.map = None;	# {Str: NodeMapper}
+		self.key = ''
+		self.value = None	# Nodemapper
+		self.shortCut = False
+		self.sets = []
+		

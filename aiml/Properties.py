@@ -18,3 +18,44 @@
 #
 #
 
+class Properties
+
+	def __init__(self):
+		self.hsh = dict()
+
+	def get(key):
+		value = ''
+		if self.hsh.has_key(key):
+			value = self.hsh[key]
+		else 
+			value = MagicStrings.default_property
+		
+		return value
+
+	def getPropertiesFromInputStream(self, fd):
+		cnt = 0
+		try:
+			for l in fd.readlines():
+				if l.find(':'):
+					buff = l.split(':')
+					self.hsh[buff[0]] =  buff[1]
+					cnt = cnt+1;
+		except IOError as e:
+			print "I/O error({0}): {1}".format(e.errno, e.strerror)
+		except:
+			print "Unexpected error:", sys.exc_info()[0]
+			raise
+		
+		return cnt
+
+	def getProperties(self, filename):
+		try:
+			fd = open(filename, 'r')
+
+			return self.getPropertiesFromInputStream(fd)
+
+		except IOError as e:
+			print "I/O error({0}): {1}".format(e.errno, e.strerror)
+		except:
+			print "Unexpected error:", sys.exc_info()[0]
+			raise
